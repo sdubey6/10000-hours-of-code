@@ -13,7 +13,7 @@ public void insertAtTail(int data)
 	}
 	if(this.tail != null)
 	{
-		this.tail= setNextNode(newNode);  //need to write steNextNode method
+		//this.tail= setNextNode(newNode);  //need to write steNextNode method
 		this.tail = newNode;
 		
 	}
