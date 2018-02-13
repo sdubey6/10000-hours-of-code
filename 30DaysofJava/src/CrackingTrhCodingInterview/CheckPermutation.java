@@ -18,7 +18,8 @@ public class CheckPermutation {
 				return false;
 				
 			}
-			return sort(s1).equals(sort(s2));
+			return sort(s1).equals(sort(s2)); //may b using sort method of collections not a good idea
+			
 			
 		}
 		String sort(String s) {
