@@ -43,11 +43,15 @@ public class Urlify {
 		 int s2 = scan.nextInt();
 		 String s1 = scan.next();
 		 System.out.println(s1.length());
-		 char[] ch = new char[s1.length()] ;
-		 for (int i = 0; i < s1.length();i++) {
+		 String word=s1.replaceAll(" ","/");
+		 char[] ch = word.toCharArray();
+		 
+		 for(int i=0;i<ch.length;i++){
+		       System.out.print(ch[i]); 
+		 //for (int i = 0; i < s1.length();i++) {
 			 
-			 ch[i]= s1.charAt(i);
-		 }
+			// ch[i]= s1.charAt(i);
+		 //}
 		 //char [] s_array = s1.toCharArray();
 		 System.out.println(new String(ch));
 		 
@@ -57,4 +61,5 @@ public class Urlify {
 		 
 	}
 
+}
 }
