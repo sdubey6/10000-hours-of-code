@@ -5,7 +5,7 @@ of a given Binary tree */
 
 /* Class containing left and right child of current
 node and key value*/
-class Node
+/*class Node
 {
  int data;
  Node left, right;
@@ -14,7 +14,7 @@ class Node
      data = item;
      left = right = null;
  }
-}
+}*/
 public class mindepth
 {
  //Root of the Binary Tree
