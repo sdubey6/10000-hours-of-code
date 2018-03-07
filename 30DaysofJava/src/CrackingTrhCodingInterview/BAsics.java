@@ -3,11 +3,17 @@ package CrackingTrhCodingInterview;
 import java.util.Arrays;
 
 public class BAsics {
-public static void main(String[] args ) {
-	String s = "Shikha";
-	for (int i = 0; i<10; i++) {
-		System.out.println(s.charAt(i));
+	static int x = 10;
+	static {
+		System.out.println("static method");
 	}
+	//static block are executed before the main block
+	
+public static void main(String[] args ) {
+	
+System.out.println("main method");
+	
+ 
 	
 }
 }

@@ -27,7 +27,7 @@ MNode head2;
 		list2.head2.next.next.next=new MNode(60);
 		list2.head2.next.next.next.next=new MNode(80);
 		System.out.println("Printing list1: ");
-		list1.printList(list1.head1);
+		list1.printList(list1.head1);	
 		System.out.println("Printing list2: ");
 		list2.printList(list2.head2);
 		
