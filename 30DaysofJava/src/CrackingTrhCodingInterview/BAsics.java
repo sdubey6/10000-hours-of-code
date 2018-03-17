@@ -7,8 +7,8 @@ public class BAsics
 	{
 
 	public static void main(String[] args) {
-        if (System.out.printf("Hello World!\n") == null) {}
-        //if (System.out.append("Hello World!\n").equals(null)) {}
+		int i = Integer.MIN_VALUE;
+        System.out.println(i);
     }
 
 	}

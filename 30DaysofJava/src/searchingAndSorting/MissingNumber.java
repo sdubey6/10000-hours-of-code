@@ -6,6 +6,7 @@ public class MissingNumber {
     {
         int x1 = a[0]; 
         int x2 = 1; 
+        
          
         /* For xor of all the elements 
            in array */
