@@ -9,7 +9,9 @@ public class CycleinGraph {
 	CycleinGraph(int v, int e){
 		V = v;
 		E = e;
-		
+		edge = new Edge[E];
+        for (int i=0; i<e; ++i)
+            edge[i] = new Edge();
 	}
 	
 	class Edge{
@@ -28,14 +30,31 @@ public class CycleinGraph {
 		if (subsets[i].parent !=i) {
 			subsets[i].parent = find(subsets, subsets[i].parent);
 		}
+		return subsets[i].parent;
 	}
 	
 	void union(Subset subsets[], int x, int y) {
-		
+		 int xroot = find(subsets, x);
+		    int yroot = find(subsets, y);
+		 
+		    // Attach smaller rank tree under root of high rank tree
+		    // (Union by Rank)
+		    if (subsets[xroot].rank < subsets[yroot].rank)
+		        subsets[xroot].parent = yroot;
+		    else if (subsets[xroot].rank > subsets[yroot].rank)
+		        subsets[yroot].parent = xroot;
+		 
+		    // If ranks are same, then make one as root and increment
+		    // its rank by one
+		    else
+		    {
+		        subsets[yroot].parent = xroot;
+		        subsets[xroot].rank++;
+		    }
 		
 	}
 	
-	void isCycle(Graph graph) {
+	int isCycle(CycleinGraph graph) {
 		Subset subsets[] = new Subset[V];
 		for(int i=0; i<V; ++i)
             subsets[i]=new Subset();
@@ -45,7 +64,17 @@ public class CycleinGraph {
 			subsets[i].rank = 0;
 			
 		}
-		
+		 for (int i = 0; i < graph.E; ++i)
+	        {
+	            int x = graph.find(subsets, graph.edge[i].src);
+	            int y = graph.find(subsets, graph.edge[i].dest);
+	 
+	            if (x == y)
+	                return 1;
+	 
+	            graph.union(subsets, x, y);
+	        }
+	        return 0;
 		
 	}
 	

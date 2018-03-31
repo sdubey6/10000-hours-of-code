@@ -12,16 +12,19 @@ import java.util.Comparator;
 		}
 	}
 	class Arr_comaparator implements Comparator<Train>{
-		
-		@Override
+		 public int compare(Train x, Train y)
+		    {
+		 
+		        return x.arr - y.arr;
+		    }
+		/**@Override
 	    public int compare(Train arg0, Train arg1) {
 	        if(arg0.arr <= arg1.arr){
 	            return -1;
 	        }else{
 	            return 1;
-	        }
+	        }**/
 	    }
-	}
 
 
 
