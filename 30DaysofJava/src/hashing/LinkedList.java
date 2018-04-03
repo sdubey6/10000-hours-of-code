@@ -3,7 +3,7 @@ package hashing;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class LinkedList {
+//public class LinkedList {
 		Node head;
 		class Node{
 	 int data;
@@ -145,4 +145,7 @@ public class LinkedList {
         union = getUnion(llist1, llist2);
         union.printList();
 }
+	
+		
+	}
 	}
