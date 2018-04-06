@@ -6,7 +6,7 @@ public class ArrayElements {
     // Returns length of the longest consecutive subsequence
     static int findLongestConseqSubseq(int arr[],int n)
     {
-        HashSet<Integer> S = new HashSet<Integer>();
+    	HashSet<Integer> S = new HashSet<Integer>();
         int ans = 0;
  
         // Hash all the array elements
