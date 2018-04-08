@@ -1,5 +1,6 @@
 package Trees;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 import java.util.Queue;
@@ -43,7 +44,8 @@ public class Traversals {
         System.out.println("\n Level order traversal of binary tree is ");
         levelorder(root); */
         
-        printVerticalOrder(root);
+        //printVerticalOrder(root);
+        printDiagonalOrder(root);
 				
 				
 	}
@@ -123,7 +125,7 @@ getVerticalOrder(root.right, hd+1, m);
 
 // The main function to print vertical oder of a binary tree
 // with given root
-static void printVerticalOrder(Node root)
+static void printDiagonallOrder(Node root)
 {
 // Create a map and store vertical oder in map using
 // function getVerticalOrder()
@@ -138,5 +140,38 @@ for (Entry<Integer, Vector<Integer>> entry : m.entrySet())
 System.out.println(entry.getValue());
 }
 }
+static void printDiagonalOrder(Node root) {
+	HashMap <Integer, Vector<Integer>> m = new HashMap<>();
+	int d = 0;
+	
+	getDiagonalOrder(root, 0, m);
+	
+	for(Entry<Integer, Vector<Integer>> e : m.entrySet()) {
+		System.out.println(e.getValue());
+	
+	//print code
+}
+}
 
+static void getDiagonalOrder(Node root, int d, HashMap <Integer, Vector<Integer>> m) {
+	
+	if (root == null) return;
+	
+	Vector<Integer> v = m.get(d);
+	if(v == null) {
+		v = new Vector<Integer>();
+		v.add(root.data);
+	}
+	else
+		v.add(root.data);
+	m.put(d,  v);
+	
+	// Store nodes in left subtree
+    getDiagonalOrder(root.left, d+1, m);
+     
+    // Store nodes in right subtree
+    getDiagonalOrder(root.right, d, m);	
+			
+	}
+	
 }
