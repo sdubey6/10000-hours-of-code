@@ -1,9 +1,13 @@
 package hashing;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
 
 public class RemoveDups {
 
+	Stack<Integer> q = new Stack<Integer>();
 	 static Node head;
 	static class Node{
 		int data;
@@ -17,7 +21,7 @@ public class RemoveDups {
 	
 	public static void main (String[] args) {
 		RemoveDups rd = new RemoveDups();
-		rd.head = new Node(4);
+		head = new Node(4);
 		rd.push(5);
 		rd.push(5);
 		rd.push(9);
